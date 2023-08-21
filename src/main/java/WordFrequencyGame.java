@@ -9,9 +9,9 @@ public class WordFrequencyGame {
     public static final String SPACE_CHAR = " ";
     public static final String CALCULATE_ERROR = "Calculate Error";
 
-    public String getResult(String inputStr) {
+    public String calculateFrequency(String sentence) {
         try {
-            String[] words = inputStr.split(SPACE_DELIMITER);
+            String[] words = sentence.split(SPACE_DELIMITER);
 
             List<WordFrequencyInfo> wordFrequencyInfoList = Arrays.stream(words)
                     .map(s -> new WordFrequencyInfo(s, 1))
