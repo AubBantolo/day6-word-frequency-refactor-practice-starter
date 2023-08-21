@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class WordFrequencyGame {
 
@@ -16,7 +17,7 @@ public class WordFrequencyGame {
             try {
 
                 //split the input string with 1 to n pieces of spaces
-                String[] words = inputStr.split(NEW_DELIMITER);
+                String[] words = inputStr.split(SPACE_DELIMITER);
 
                 List<WordFrequencyInfo> wordFrequencyInfoList = new ArrayList<>();
                 for (String s : words) {
