@@ -4,7 +4,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class WordFrequencyGame {
-
     public static final String SPACE_DELIMITER = "\\s+";
     public static final String NEW_DELIMITER = "\n";
     public static final String SPACE_CHAR = " ";
@@ -12,15 +11,12 @@ public class WordFrequencyGame {
 
     public String getResult(String inputStr) {
         try {
-
-            //split the input string with 1 to n pieces of spaces
             String[] words = inputStr.split(SPACE_DELIMITER);
 
             List<WordFrequencyInfo> wordFrequencyInfoList = Arrays.stream(words)
                     .map(s -> new WordFrequencyInfo(s, 1))
                     .collect(Collectors.toList());
 
-            //get the map for the next step of sizing the same word
             Map<String, List<WordFrequencyInfo>> wordListMap = getListMap(wordFrequencyInfoList);
 
             return wordListMap.entrySet().stream()
@@ -28,15 +24,10 @@ public class WordFrequencyGame {
                     .sorted((wordInfo1, wordInfo2) -> wordInfo2.getWordCount() - wordInfo1.getWordCount())
                     .map(wordFrequencyInfo -> wordFrequencyInfo.getValue() + SPACE_CHAR + wordFrequencyInfo.getWordCount())
                     .collect(Collectors.joining(NEW_DELIMITER));
-
-
         } catch (Exception e) {
-
-
             return CALCULATE_ERROR;
         }
     }
-
 
     private Map<String, List<WordFrequencyInfo>> getListMap(List<WordFrequencyInfo> wordFrequencyInfoList) {
         return wordFrequencyInfoList.stream()
