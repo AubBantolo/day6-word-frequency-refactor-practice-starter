@@ -1,20 +1,17 @@
-public class Input {
-    private String value;
+public class WordFrequencyInfo {
+    private String word;
     private int count;
 
-    public Input(String w, int i){
-        this.value =w;
+    public WordFrequencyInfo(String w, int i){
+        this.word =w;
         this.count =i;
     }
 
-
     public String getValue() {
-        return this.value;
+        return this.word;
     }
 
     public int getWordCount() {
         return this.count;
     }
-
-
 }
