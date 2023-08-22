@@ -11,6 +11,7 @@ public class WordFrequencyGame {
     public static final String NEW_DELIMITER = "\n";
     public static final String CALCULATE_ERROR = "Calculate Error";
 
+    //TODO: extract methods from calculateFrequency e.g. method for building the word-frequency map and another for building the string output
     public String calculateFrequency(String sentence) {
         try {
             String[] words = sentence.split(SPACE_DELIMITER);
